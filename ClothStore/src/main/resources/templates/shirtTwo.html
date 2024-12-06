@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body style="background-color: #f0f0f0;">
+
+	<div th:replace="common/header :: navbar" />
+
+
+	<div class="container">
+		<div class="row" style="margin-bottom: -100px;">
+			<div class="row">
+				<div class="col-xs-8">
+					<h2 class="section-headline">
+						<span>Product Detail</span>
+					</h2>
+				</div>
+
+			</div>
+
+			<img class="img-responsive" src="/image/wood.png"
+				style="margin-top: -75px;" />
+		</div>
+
+
+
+		<form>
+			<div class="row" style="margin-top: 120px;">
+				<div class="col-xs-3">
+					<a th:href="@{/}">Back to home page</a><br /> <img
+						src="/image/2.png" class="img-responsive"
+						style="margin-top: 20px;" />
+				</div>
+
+
+				<div class="col-xs-9">
+
+					<h3>DC Comics Wonder Woman Logo Embroidery on Bella + Canvas
+						Unisex Sweatshirt</h3>
+					<div class="row">
+						<div class="col-xs-5">
+							<h5>
+								<strong>Color: </strong><span>Gray</span>
+							</h5>
+							<p>
+								<strong>Brand Name: </strong><span>StyleCove</span>
+							</p>
+							<p>
+								<strong> Manufacture Date: </strong><span>12/23/2023</span>
+							</p>
+							<p>
+								<strong>Size: </strong><span>Medium</span>
+							</p>
+							<p>
+								<strong>Types: </strong><span>Hooded Sweatshirt</span>
+							</p>
+
+							<p>
+								<strong>Universal Product Code: </strong><span>228987</span>
+							</p>
+
+
+							<p>
+								<strong>Shirt Serial Number: </strong><span>989629</span>
+							</p>
+							<p>
+								<strong>Delivery Weight : </strong><span>2</span> ounces
+							</p>
+						</div>
+
+						<div class="col-xs-7">
+							<div class="panel panel-default"
+								style="border-width: 5px; margin-top: 20px;">
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-xs-6">
+											<h4>
+												Current price: <span style="color: #db3208;">$<span>54.99</span></span>
+											</h4>
+											<p>
+												Standard Price: <span style="text-decoration: line-through">$<span>34.99</span></span>
+											</p>
+
+											<p>
+												Reduced by: $<span>20</span>
+											</p>
+
+
+											<span>Qty: </span> <select>
+												<option>10</option>
+											</select>
+										</div>
+										<div class="col-xs-6"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<hr />
+					<p>
+						<h2>"Bella + Canvas Unisex Sweatshirt"</h2>
+						<p>"This crewneck classic is comfy, super-soft, and designed
+							for warmth and breathability. With a drop-shoulder cut and a
+							unisex fit, it’s never been easier to stay on-trend."</p>
+						<ul>
+							<li><strong>"Material:"</strong> "52% cotton, 48% polyester
+								fleece/heather gray 90% cotton, 10% polyester"</li>
+							<li><strong>"Fabric Weight:"</strong> "8 oz (mid-weight)"</li>
+							<li><strong>"Features:"</strong> "Drop shoulder, ribbed
+								cuffs & waistband"</li>
+							<li><strong>"Brand:"</strong> "Bella + Canvas"</li>
+							<li>"Imported product, printed & processed in the USA"</li>
+						</ul>
+					</p>
+
+
+
+
+
+				</div>
+			</div>
+		</form>
+
+
+
+
+
+	</div>
+	<!-- end of container -->
+
+	<div th:replace="common/header :: footer" />
+
+
+	<div th:replace="common/header :: body-bottom-scripts" />
+</body>
+</html>

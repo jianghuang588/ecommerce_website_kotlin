@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body  style="background-color: #f0f0f0;">
+
+	<div th:replace="common/header :: navbar" />
+
+
+	<div class="container">
+		<div class="row" style="margin-bottom: -100px;">
+			<div class="row">
+				<div class="col-xs-8">
+					<h2 class="section-headline">
+						<span>Product Detail</span>
+					</h2>
+				</div>
+
+			</div>
+			
+			<img class="img-responsive" src="/image/wood.png"
+				style="margin-top: -75px;" />
+		</div>
+
+
+
+		<form>
+			<div class="row" style="margin-top: 120px;">
+				<div class="col-xs-3">
+					<a th:href="@{/}">Back to home page</a><br /> <img
+						src="/image/6.png" class="img-responsive"
+						style="margin-top: 20px;" />
+				</div>
+
+
+				<div class="col-xs-9">
+
+					<h3>time to bloom on Men’s Tri-Blend Organic T-Shirt</h3>
+					<div class="row">
+						<div class="col-xs-5">
+							<h5>
+								<strong>Color: </strong><span>Black</span>
+							</h5>
+							<p>
+								<strong>Brand Name: </strong><span>StyleCove</span>
+							</p>
+							<p>
+								<strong> Manufacture Date: </strong><span>4/29/2023</span>
+							</p>
+							<p>
+								<strong>Size: </strong><span>Medium</span>
+							</p>
+							<p>
+								<strong>Types: </strong><span>T-Shirt</span>
+							</p>
+
+							<p>
+								<strong>Universal Product Code: </strong><span>220987</span>
+							</p>
+
+
+							<p>
+								<strong>Shirt Serial Number: </strong><span>989332</span>
+							</p>
+							<p>
+								<strong>Delivery Weight : </strong><span>30</span> ounces
+							</p>
+						</div>
+
+						<div class="col-xs-7">
+							<div class="panel panel-default"
+								style="border-width: 5px; margin-top: 20px;">
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-xs-6">
+											<h4>
+												Current price: <span style="color: #db3208;">$<span>29.99</span></span>
+											</h4>
+											<p>
+												Standard Price: <span style="text-decoration: line-through">$<span>10.99</span></span>
+											</p>
+
+											<p>
+												Reduced by: $<span>19</span>
+											</p>
+
+
+											<span>Qty: </span> <select>
+												<option>9</option>
+											</select>
+										</div>
+										<div class="col-xs-6"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<hr />
+
+					<p>
+						<h2>"Men’s Tri-Blend Organic T-Shirt"</h2>
+						<p>"Make an impact in this sustainable tee, made from the
+							equivalent of 6 recycled plastic water bottles. Lightweight and
+							crazy soft, you’ll literally feel the difference you are making."</p>
+						<ul>
+							<li>"50% polyester (from recycled bottles), 25% organic
+								cotton, 25% modal. Heather gray is 25% polyester, 25% recycled
+								polyester, 25% organic cotton, 25% modal"</li>
+							<li>"Lightweight 4.2oz fabric"</li>
+							<li>"Brand: Allmade"</li>
+							<li>"Imported: printed & processed in the USA"</li>
+						</ul>
+					</p>
+
+
+
+
+
+
+
+
+
+				</div>
+			</div>
+		</form>
+
+
+
+
+
+	</div>
+	<!-- end of container -->
+
+	<div th:replace="common/header :: footer" />
+
+
+	<div th:replace="common/header :: body-bottom-scripts" />
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body  style="background-color: #f0f0f0;">
+
+	<div th:replace="common/header :: navbar" />
+
+
+	<div class="container">
+		<div class="row" style="margin-bottom: -100px;">
+			<div class="row">
+				<div class="col-xs-8">
+					<h2 class="section-headline">
+						<span>Product Detail</span>
+					</h2>
+				</div>
+
+			</div>
+
+			<img class="img-responsive" src="/image/wood.png"
+				style="margin-top: -75px;" />
+		</div>
+
+
+
+		<form>
+			<div class="row" style="margin-top: 120px;">
+				<div class="col-xs-3">
+					<a th:href="@{/}">Back to home page</a><br /> <img
+						src="/image/3.png" class="img-responsive"
+						style="margin-top: 20px;" />
+				</div>
+
+
+				<div class="col-xs-9">
+
+					<h3>DC Comics Wonder Woman Logo Embroidery on Bella + Canvas
+						Unisex Sweatshirt</h3>
+					<div class="row">
+						<div class="col-xs-5">
+							<h5>
+								<strong>Color: </strong><span>Blue</span>
+							</h5>
+							<p>
+								<strong>Brand Name: </strong><span>StyleCove</span>
+							</p>
+							<p>
+								<strong> Manufacture Date: </strong><span>1/23/2023</span>
+							</p>
+							<p>
+								<strong>Size: </strong><span>Medium</span>
+							</p>
+							<p>
+								<strong>Types: </strong><span>T-Shirt</span>
+							</p>
+
+							<p>
+								<strong>Universal Product Code: </strong><span>233987</span>
+							</p>
+
+
+							<p>
+								<strong>Shirt Serial Number: </strong><span>989009</span>
+							</p>
+							<p>
+								<strong>Delivery Weight : </strong><span>12</span> ounces
+							</p>
+						</div>
+
+						<div class="col-xs-7">
+							<div class="panel panel-default"
+								style="border-width: 5px; margin-top: 20px;">
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-xs-6">
+											<h4>
+												Current price: <span style="color: #db3208;">$<span>32.99</span></span>
+											</h4>
+											<p>
+												Standard Price: <span style="text-decoration: line-through">$<span>12.99</span></span>
+											</p>
+
+											<p>
+												Reduced by: $<span>20</span>
+											</p>
+
+
+											<span>Qty: </span> <select>
+												<option>1000</option>
+											</select>
+										</div>
+										<div class="col-xs-6"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<hr />
+					
+					<p>
+						<h2>"Unisex Tie Dye T-Shirt"</h2>
+						<p>"Far out, man! This classic tie-dye T-shirt is bringing the
+							60’s back in style. The classic fit is roomy and accommodating
+							and the always-fun tie-dye pattern brings you back to the days of
+							summer camp."</p>
+						<ul>
+							<li>"100% cotton | Fabric weight: 5.4 oz (heavyweight)"</li>
+							<li>"Double-stitched sleeves, waist, shoulders and collar"</li>
+							<li>"Reinforced shoulder construction maintains shape after
+								repeated washings"</li>
+							<li>"PLEASE NOTE: due to the unique tie-dye process, color
+								variations may occur and no two products are alike"</li>
+							<li>"Imported; processed and printed in the U.S.A."</li>
+						</ul>
+					</p>
+
+
+
+
+
+
+				</div>
+			</div>
+		</form>
+
+
+
+
+
+	</div>
+	<!-- end of container -->
+
+	<div th:replace="common/header :: footer" />
+
+
+	<div th:replace="common/header :: body-bottom-scripts" />
+</body>
+</html>

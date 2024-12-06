@@ -1,0 +1,184 @@
+<!doctype html>
+
+<!-- 
+	- citation 
+	- navbar: https://getbootstrap.com/docs/3.4/examples/navbar/
+	- udemy course section2, part6: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363142#questions
+	- udemy course section2, part7: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363144#overview
+	- udemy course section2, part8: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363146#overview
+	- udemy course section2, part9: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363148#overview
+	- udemy course section2, part10: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363150#overview
+	- udemy course section2, part11: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363152#overview
+	- udemy course section2, part17: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363164#questions
+	- udemy course section3: part20: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363164#questions
+	- udemy course section3: part21: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363176#questions
+	https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363202#overview
+	- bootstrap carousel: https://getbootstrap.com/docs/3.4/javascript/#carousel
+	- bootsrtap folder : https://getbootstrap.com/docs/3.3/getting-started/#download
+	- bootstrap non respond: https://getbootstrap.com/docs/3.4/examples/non-responsive/
+	- bootstrap panel: https://getbootstrap.com/docs/3.3/components/
+	- random image: https://picsum.photos/
+	- logo image: https://stock.adobe.com/search?k=clothing+logo&asset_id=397367515
+	- top 10 hunter image: https://elements.envato.com/hunter-vintage-badges-KNMANN?_ga=2.45521766.315818343.1726781799-970881309.1726781799
+	- faq image: https://www.searchenginejournal.com/best-faq-page-examples/267709/
+	- google map image: https://support.google.com/maps/thread/264853084/how-to-get-google-maps-to-mark-road-private?hl=en
+	- shirt image: https://kotn.com/products/mens-easy-crew?variant=41447949238355&country=US&gad_source=1&gclid=CjwKCAjwl6-3BhBWEiwApN6_ktEdRUImMTuMfGxO9dezrU3CiUBt8U_nWXGavDZDfECnTbN_zAvoPhoCN-gQAvD_BwE&colour=black&size=m
+	- bookshelf image: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363150#overview
+	- cited: http://www.w3.org/1999/xhtml
+	https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6364736#questions
+ -->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
+	xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head th:fragment="common-header">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>ClothStore Header</title>
+
+<!-- Bootstrap core CSS -->
+<link href="/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/css/non-responsive.css" rel="stylesheet" />
+
+<!-- Custom styles for this template -->
+<link href="/css/style.css" rel="stylesheet" />
+<link rel="icon" href="/image/logo1.png" />
+
+<!-- Data table -->
+<link th:href="@{/css/jquery.dataTables.min.css}" rel="stylesheet" />
+<link th:href="@{/css/dataTables.bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+
+	<div th:fragment="navbar">
+		<!-- Top static navbar -->
+		<nav class="navbar navbar-default navbar-inverse"
+			style="margin-top: -20px;">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" th:href="@{/}">HUANG'S CLOTHSTORE</a>
+				</div>
+				<div id="navbar">
+					<ul class="nav navbar-nav navbar-left">
+						<li class="dropdown"><a th:href="@{/shirtshelf}"
+							class="dropdown-toggle" data-toggle="dropdown" role="button"
+							aria-haspopup="true" aria-expanded="false">SHIRTS<span
+								class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a th:href="@{/shirtshelf}">Browse the shirtshelf </a></li>
+								<li><a th:href="@{/hours}">Store hours &#38; Directions</a></li>
+								<li><a th:href="@{/faq}">FAQ</a></li>
+							</ul></li>
+
+						<form class="navbar-form" th:action="@{/searchShirt}"
+							method="post">
+							<input type="text" name="keyword" class="form-control"
+								placeholder="Shirt title" />
+							<button type="submit" class="btn btn-default">Search</button>
+						</form>
+
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+
+
+						<li><a th:href="@{/shoppingCart/cart}">SHOPPING CART</a></li>
+						<li><a sec:authorize="isAnonymous()" th:href="@{/login}">MY
+								ACCOUNT</a></li>
+						<li><a sec:authorize="isAuthenticated()"
+							th:href="@{/myProfile}">MY ACCOUNT</a></li>
+						<li><a sec:authorize="isAuthenticated()" th:href="@{/logout}">LOGOUT</a></li>
+
+
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+
+	<div th:fragment="footer">
+		<br /> <br />
+		<footer>
+			<div class="row">
+				<div class="col-xs-3 footerleft">
+					<div class="logofooter">
+						<a th:href="@{/}"><img class="img-responsive"
+							src="/image/logo1.png" style="width: 200px;" /></a>
+					</div>
+					<p>
+						Huang's Independent Shirt Store. <br />Ensuring the highest
+						quality for our customers
+					</p>
+				</div>
+				<div class="col-xs-3 paddingtop-bottom">
+					<h6 class="heading7">CONTACT</h6>
+					<ul class="post">
+						<p>
+							<i class="fa fa-map-pin"></i> 144-10 Roosevelt Ave<br />
+							Flushing NY, USA 11354
+						</p>
+						<p>
+							<i class="fa fa-phone"></i> Phone (USA) : +1 718 844 9509
+						</p>
+						<p>
+							<i class="fa fa-envelope"></i> E-mail : jianghuang588@gmail.com
+						</p>
+					</ul>
+				</div>
+				<div class="col-xs-3 paddingtop-bottom">
+					<h6 class="heading7">Resources</h6>
+					<ul class="footer-ul">
+						<li><a href="#"> Privacy Guidelines</a></li>
+						<li><a href="#"> Service &#38; Agreement</a></li>
+						<li><a href="#"> Common Inquiries</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-3 paddingtop-bottom">
+					<h6 class="heading7">Operating Hours</h6>
+					<div class="post">
+						<p>Monday - Saturday: 11am - 8pm</p>
+						<p>Sunday: 8am - 12pm</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<div class="copyright">
+			<div class="col-md-6">
+				<p>© 2024 - Copyright Retained</p>
+			</div>
+			<div class="col-md-6">
+				<ul class="bottom_ul">
+					<li><a href="#">About Our Team</a></li>
+					<li><a href="#">Articles</a></li>
+					<li><a href="#">Customer Support</a></li>
+					<li><a href="#">Reach Us</a></li>
+					<li><a href="#">Website Overview</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+	<div th:fragment="body-bottom-scripts">
+
+
+		<script th:src="@{/js/jquery.min.js}"></script>
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+
+		<script th:src="@{/js/scripts.js}"></script>
+
+		<!-- data table -->
+		<script th:src="@{/js/jquery.dataTables.min.js}"></script>
+		<script th:src="@{/js/dataTables.bootstrap.min.js}"></script>
+
+	</div>
+</body>
+</html>

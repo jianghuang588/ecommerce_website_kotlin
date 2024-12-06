@@ -1,0 +1,69 @@
+<!-- 
+	- citation 
+	- navbar: https://getbootstrap.com/docs/3.4/examples/navbar/
+	- udemy course section2, part6: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363142#questions
+	- udemy course section2, part7: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363144#overview
+	- udemy course section2, part8: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363146#overview
+	- udemy course section2, part9: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363148#overview
+	- udemy course section2, part10: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363150#overview
+	- udemy course section2, part11: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363152#overview
+	- udemy course section3, part12: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363154#overview
+	- udemy course section3, part13: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363156#overview
+	- udemy course section3 part17: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363164#questions
+	- udemy course section3 part22: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363176#questions
+	- bootstrap carousel: https://getbootstrap.com/docs/3.4/javascript/#carousel
+	- bootsrtap folder : https://getbootstrap.com/docs/3.3/getting-started/#download
+	- bootstrap non respond: https://getbootstrap.com/docs/3.4/examples/non-responsive/
+	- bootstrap panel: https://getbootstrap.com/docs/3.3/components/
+	- random image: https://picsum.photos/
+	- logo image: https://stock.adobe.com/search?k=clothing+logo&asset_id=397367515
+	- top 10 hunter image: https://elements.envato.com/hunter-vintage-badges-KNMANN?_ga=2.45521766.315818343.1726781799-970881309.1726781799
+	- faq image: https://www.searchenginejournal.com/best-faq-page-examples/267709/
+	- google map image: https://support.google.com/maps/thread/264853084/how-to-get-google-maps-to-mark-road-private?hl=en
+	- shirt image: https://kotn.com/products/mens-easy-crew?variant=41447949238355&country=US&gad_source=1&gclid=CjwKCAjwl6-3BhBWEiwApN6_ktEdRUImMTuMfGxO9dezrU3CiUBt8U_nWXGavDZDfECnTbN_zAvoPhoCN-gQAvD_BwE&colour=black&size=m
+	- bookshelf image: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363150#overview
+	- cited http://www.w3.org/1000/xhtml
+	- wood image: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363154#overview
+ -->
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body>
+	<div th:replace="common/header :: navbar" />
+
+	
+	<div class="container">
+		<div class="row" style="margin-bottom: -60px;">
+			<div class="col-xs-8">
+				<h2 class="section-headline">
+					<span>Error</span>
+				</h2>
+			</div>
+			<div class="col-xs-3">
+				<img src="/image/logo3.png" class="img-responsive" />
+			</div>
+		</div>
+		<hr
+			style="position: absolute; width: 100%; height: 6px; background-color: #333; z-index: -1; margin-top: -80px;" />
+		<img class="img-responsive" src="/image/wood.png"
+			style="margin-top: -75px;" />
+
+		<div class="row" style="margin-top:10px">
+			<div class="col-xs-9 col-xs-offset-3">
+				<h5>Error: Invalid request path detected. Click <a
+						th:href="@{/}">here</a> to redirect to the home page.</h5>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+		<div th:replace="common/header :: footer" />
+
+
+	<div th:replace="common/header :: body-bottom-scripts" />
+</body>
+</html>

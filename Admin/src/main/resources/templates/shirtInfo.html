@@ -1,0 +1,131 @@
+<!-- 
+	- citation 
+	- navbar: https://getbootstrap.com/docs/3.4/examples/navbar/
+	- udemy course section2, part6: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363142#questions
+	- udemy course section2, part7: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363144#overview
+	- udemy course section2, part8: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363146#overview
+	- udemy course section2, part9: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363148#overview
+	- udemy course section2, part10: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363150#overview
+	- udemy course section2, part11: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363152#overview
+	- bootstrap carousel: https://getbootstrap.com/docs/3.4/javascript/#carousel
+	- bootsrtap folder : https://getbootstrap.com/docs/3.3/getting-started/#download
+	- bootstrap non respond: https://getbootstrap.com/docs/3.4/examples/non-responsive/
+	- bootstrap panel: https://getbootstrap.com/docs/3.3/components/
+	- random image: https://picsum.photos/
+	- logo image: https://stock.adobe.com/search?k=clothing+logo&asset_id=397367515
+	- top 10 hunter image: https://elements.envato.com/hunter-vintage-badges-KNMANN?_ga=2.45521766.315818343.1726781799-970881309.1726781799
+	- faq image: https://www.searchenginejournal.com/best-faq-page-examples/267709/
+	- google map image: https://support.google.com/maps/thread/264853084/how-to-get-google-maps-to-mark-road-private?hl=en
+	- shirt image: https://kotn.com/products/mens-easy-crew?variant=41447949238355&country=US&gad_source=1&gclid=CjwKCAjwl6-3BhBWEiwApN6_ktEdRUImMTuMfGxO9dezrU3CiUBt8U_nWXGavDZDfECnTbN_zAvoPhoCN-gQAvD_BwE&colour=black&size=m
+	- bookshelf image: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363150#overview
+	- cited http://www.w3.org/1000/xhtml
+	https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363208#overview
+	https://fontawesome.com/v4/icons/
+	
+ -->
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body style="background-color: #f2f2f2;">
+
+	<div th:replace="common/header :: navbar" />
+
+
+	<div class="container">
+		
+		
+		<legend class="center-block"
+			style="font-weight: bold; font-size: 40px;">
+			Edit Shirt 
+		</legend>
+
+
+		<div>
+			<ol class="breadcrumb">
+				<li><a th:href="@{/shirt/shirtList}"><i
+						class="fa fa-long-arrow-left" aria-hidden="true"></i>Go back</a></li>
+				<li><a th:href="@{/shirt/updateShirt?id=}+${shirt.id}">Edit</a></li>
+			</ol>
+
+		</div>
+
+		<div class="row">
+			<div class="col-xs-3">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<img th:src="@{/image/shirt/}+${shirt.id}+'.png'"
+							class="img-responsive center-block" />
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-9">
+				<h3 th:text="${shirt.title}"></h3>
+				<div class="row">
+					<div class="col-xs-6">
+						<p>
+							<strong>Name: </strong><span th:text="${shirt.author}"></span>
+						</p>
+						<p>
+							<strong>Brand Name: </strong><span th:text="${shirt.publisher}"></span>
+						</p>
+						<p>
+							<strong>Manufacture Date: </strong><span
+								th:text="${shirt.publicationDate}"></span>
+						</p>
+						<p>
+							<strong>Size: </strong><span th:text="${shirt.language}"></span>
+						</p>
+						<p>
+							<strong>Types: </strong><span th:text="${shirt.category}"></span>
+						</p>
+						<p>
+							<strong>Universal Product Code : </strong><span
+								th:text="${shirt.numberOfPages}"></span>
+						</p>
+					</div>
+					<div class="col-xs-6">
+						<p>
+							<strong>Shirt Sleeve Length: </strong><span
+								th:text="${shirt.format}"></span>
+						</p>
+						<p>
+							<strong>Shirt Serial Number: </strong><span
+								th:text="${shirt.isbn}"></span>
+						</p>
+						<p>
+							<strong>Delivery Weight: </strong><span
+								th:text="${shirt.shippingWeight}"></span>
+						</p>
+						<p>
+							<strong>Standard Price: </strong><span
+								th:text="${shirt.listPrice}"></span>
+						</p>
+						<p>
+							<strong>Current Price: </strong><span th:text="${shirt.ourPrice}"></span>
+						</p>
+						<p>
+							<strong>Available Quantity in Stock: </strong><span
+								th:text="${shirt.inStockNumber}"></span>
+						</p>
+					</div>
+				</div>
+
+				<p>
+					<Strong>Summary: </Strong><span th:utext="${shirt.description}"></span>
+				</p>
+			</div>
+
+		</div>
+	</div>
+
+
+
+	<div th:replace="common/header :: footer" />
+
+	<div th:replace="common/header :: body-bottom-scripts" />
+
+
+</body>
+</html>
+

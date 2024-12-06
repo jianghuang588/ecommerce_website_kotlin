@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body style="background-color: #f0f0f0;">
+
+	<div th:replace="common/header :: navbar" />
+
+	<div class="container">
+		<div class="row" style="margin-bottom: -100px;">
+			<div class="row">
+				<div class="col-xs-8">
+					<h2 class="section-headline">
+						<span>Store Locator</span>
+					</h2>
+				</div>
+				
+			</div>
+			
+			<img class="img-responsive" src="/image/wood.png"
+				style="margin-top: -75px;" />
+		</div>
+
+		<div class="row" style="margin-top: 140px">
+			<div class="col-xs-12 text-center">
+				<img class="img-responsive" src="/image/hours.png"
+					style="margin: auto;" />
+			</div>
+		</div>
+
+
+	</div>
+	<!-- end of container -->
+
+	<div th:replace="common/header :: footer" />
+
+
+	<div th:replace="common/header :: body-bottom-scripts" />
+</body>
+</html>

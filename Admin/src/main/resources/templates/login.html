@@ -1,0 +1,66 @@
+<!-- 
+	- citation 
+	- udemy course section4, part27: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363176#questions
+
+ -->
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body style="background-color: #f2f2f2;">
+	<div class="container">
+		<h5 class="center-block" style="font-weight: bold;">Welcome to
+			Admin Portal for HUANG'S ClothStore</h5>
+
+		<hr />
+
+		<img th:src="@{/image/wood.png}" class="img-responsive"
+			src="/image/wood.png" />
+
+
+		<div style="display: flex; justify-content: center;">
+			<img th:src="@{/image/logo3.png}" class="img-responsive"
+				style="width: 150px;">
+		</div>
+
+
+
+
+
+		<div class="row">
+			<div class="col-xs-4 col-md-offset-4">
+				<div class="bg-danger" th:if="${param.error}">The password and
+					username are invalid.</div>
+				<div class="bg-danger" th:if="${param.logout}">You are no
+					longer logged in.</div>
+				<form class="form-signin" th:action="@{/login}" method="post">
+					<h2 class="form-signin-heading">Kindly log in.</h2>
+					<div class="form-group">
+						<label for="username" class="sr-only">Username</label> <input
+							type="text" class="form-control" placeholder="Username"
+							name="username" id="username" required="required"
+							autofocus="autofocus" />
+					</div>
+					<div class="form-group">
+						<label for="password" class="sr-only">Password</label> <input
+							type="password" class="form-control" placeholder="Password"
+							name="password" id="password" required="required" />
+					</div>
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
+						In</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div th:replace="common/header :: footer" />
+
+	<div th:replace="common/header :: body-bottom-scripts" />
+
+
+
+</body>
+
+</html>

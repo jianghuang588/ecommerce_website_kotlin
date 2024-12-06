@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body  style="background-color: #f0f0f0;">
+
+	<div th:replace="common/header :: navbar" />
+
+
+	<div class="container">
+		<div class="row" style="margin-bottom: -100px;">
+			<div class="row">
+				<div class="col-xs-8">
+					<h2 class="section-headline">
+						<span>Product Detail</span>
+					</h2>
+				</div>
+
+			</div>
+
+			<img class="img-responsive" src="/image/wood.png"
+				style="margin-top: -75px;" />
+		</div>
+
+
+
+		<form>
+			<div class="row" style="margin-top: 120px;">
+				<div class="col-xs-3">
+					<a th:href="@{/}">Back to home page</a><br /> <img
+						src="/image/1.png" class="img-responsive"
+						style="margin-top: 20px;" />
+				</div>
+
+
+				<div class="col-xs-9">
+
+					<h3>Teddy bear drinking bubbletea embroidered on Men's Hoodie
+					</h3>
+					<div class="row">
+						<div class="col-xs-5">
+							<h5>
+								<strong>Color: </strong><span>Gray</span>
+							</h5>
+							<p>
+								<strong>Brand Name: </strong><span>Threadify</span>
+							</p>
+							<p>
+								<strong> Manufacture Date: </strong><span>11/23/2023</span>
+							</p>
+							<p>
+								<strong>Size: </strong><span>Small</span>
+							</p>
+							<p>
+								<strong>Types: </strong><span>Hoodie</span>
+							</p>
+
+							<p>
+								<strong>Universal Product Code: </strong><span>123987</span>
+							</p>
+
+
+							<p>
+								<strong>Shirt Serial Number: </strong><span>987621</span>
+							</p>
+							<p>
+								<strong>Delivery Weight : </strong><span>12</span> ounces
+							</p>
+						</div>
+
+						<div class="col-xs-7">
+							<div class="panel panel-default"
+								style="border-width: 5px; margin-top: 20px;">
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-xs-6">
+											<h4>
+												Current price: <span style="color: #db3208;">$<span>52.99</span></span>
+											</h4>
+											<p>
+												Standard Price: <span style="text-decoration: line-through">$<span>50.99</span></span>
+											</p>
+
+											<p>
+												Reduced by: $<span>2</span>
+											</p>
+
+
+											<span>Qty: </span> <select>
+												<option>100</option>
+											</select>
+										</div>
+										<div class="col-xs-6"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<hr />
+
+
+					<p>
+						<h2>"Men's Hoodie"</h2>
+						<p>"This Hanes classic is a comfortable classic. King of
+							versatility, the men's hooded sweatshirt has become a staple in
+							any wardrobe. Kangaroo-style front pocket is perfect for your
+							phone, keys, or anything else you want to stash."</p>
+						<ul>
+							<li>"Brand: Hanes | Product ID: P170"</li>
+							<li>"50% cotton (up to 7.7% reclaimed), 50% polyester (up to
+								7.7% recycled) | Fabric Weight: 7.8 oz (midweight)"</li>
+							<li>"Recycled polyester from plastic water bottles"</li>
+							<li>"Ribbed cuffs and waist hem"</li>
+							<li>"Adjustable drawstring hood"</li>
+							<li>"Imported; processed and printed in the U.S.A."</li>
+							<li>"Size 3XL available for colors: black, navy, red, white,
+								royal, ash, asphalt gray, heather gray, charcoal gray"</li>
+							<li>"Size 4XL & 5XL available for: black, navy, red, white,
+								royal, ash, heather gray & charcoal gray"</li>
+							<li>"50% cotton (up to 7.7% reclaimed), 50% polyester (up to
+								7.7% recycled). Recycled polyester from plastic water bottles"</li>
+						</ul>
+						<p>"Please note: Hanes is transitioning into new color shades
+							of Kelly Green and Burgundy. Your order may contain mixed stock
+							of different shades during this transition."</p>
+					</p>
+
+
+				</div>
+			</div>
+		</form>
+
+
+
+
+
+	</div>
+	<!-- end of container -->
+
+	<div th:replace="common/header :: footer" />
+
+
+	<div th:replace="common/header :: body-bottom-scripts" />
+</body>
+</html>

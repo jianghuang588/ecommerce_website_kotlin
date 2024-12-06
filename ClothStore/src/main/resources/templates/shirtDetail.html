@@ -1,0 +1,187 @@
+<!-- 
+	- citation 
+	- navbar: https://getbootstrap.com/docs/3.4/examples/navbar/
+	- udemy course section2, part6: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363142#questions
+	- udemy course section2, part7: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363144#overview
+	- udemy course section2, part8: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363146#overview
+	- udemy course section2, part9: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363148#overview
+	- udemy course section2, part10: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363150#overview
+	- udemy course section2, part11: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363152#overview
+	- udemy course section3, part12: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363154#overview
+	- udemy course section3, part13: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363156#overview
+	- udemy course section3 part17: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363164#questions
+	- udemy course section3: part19: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363164#questions
+	- udemy course section3: part20:  https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363164#questions
+	- bootstrap carousel: https://getbootstrap.com/docs/3.4/javascript/#carousel
+	- bootsrtap folder : https://getbootstrap.com/docs/3.3/getting-started/#download
+	- bootstrap non respond: https://getbootstrap.com/docs/3.4/examples/non-responsive/
+	- bootstrap panel: https://getbootstrap.com/docs/3.3/components/
+	- random image: https://picsum.photos/
+	- logo image: https://stock.adobe.com/search?k=clothing+logo&asset_id=397367515
+	- top 10 hunter image: https://elements.envato.com/hunter-vintage-badges-KNMANN?_ga=2.45521766.315818343.1726781799-970881309.1726781799
+	- faq image: https://www.searchenginejournal.com/best-faq-page-examples/267709/
+	- google map image: https://support.google.com/maps/thread/264853084/how-to-get-google-maps-to-mark-road-private?hl=en
+	- shirt image: https://kotn.com/products/mens-easy-crew?variant=41447949238355&country=US&gad_source=1&gclid=CjwKCAjwl6-3BhBWEiwApN6_ktEdRUImMTuMfGxO9dezrU3CiUBt8U_nWXGavDZDfECnTbN_zAvoPhoCN-gQAvD_BwE&colour=black&size=m
+	- bookshelf image: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363150#overview
+	- cited http://www.w3.org/1000/xhtml
+	- wood image: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363154#overview
+	https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363202#overview
+	https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363200#overview
+ -->
+<!doctype html>
+
+
+</script>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+<body  style="background-color: #f0f0f0;">
+	<div th:replace="common/header :: navbar" />
+
+	<div class="container">
+		<div class="row" style="margin-bottom: -100px;">
+			<div class="col-xs-8">
+				<h2 class="section-headline">
+					<h2 class="section-headline">
+						<span>Product Overview</span>
+					</h2>
+				</h2>
+			</div>
+
+		</div>
+
+		<img class="img-responsive" src="/image/wood.png"
+			style="margin-top: -75px;" />
+
+
+		<form th:action="@{/shoppingCart/addItem}" method="post">
+			<input hidden="hidden" th:field="*{shirt.id}" />
+			<div class="row" style="margin-top: 120px;">
+				<div class="col-xs-3">
+					<a th:href="@{/shirtshelf}">Back to shirt list</a><br /> <img
+						class="img-responsive shelf-shirt"
+						th:src="#{adminPath}+@{/image/shirt/}+${shirt.id}+'.png'" />
+				</div>
+
+				<div class="col-xs-9">
+					<h3>
+						<span th:if="${addshirtSuccess}" style="color: forestgreen"><i
+							class="fa fa-check" aria-hidden="true" style="color: forestgreen"></i>Item
+							Added To Cart.</span>
+					</h3>
+					<h3>
+						<span th:if="${notEnoughStock}" style="color: red">Unfortunately,
+							Only <span th:text="${shirt.inStockNumber}"></span> Available In
+							Stock".
+						</span>
+					</h3>
+
+
+					<h3 th:text="${shirt.title}">Shirt Title</h3>
+					<div class="row">
+						<div class="col-xs-5">
+							<h5>
+								<strong>Color: </strong><span th:text="${shirt.author}"></span>
+							</h5>
+							<p>
+								<strong>Brand Name: </strong><span th:text="${shirt.publisher}"></span>
+							</p>
+							<p>
+								<strong> Manufacture Date: </strong><span
+									th:text="${shirt.publicationDate}"></span>
+							</p>
+							<p>
+								<strong>Size: </strong><span th:text="${shirt.language}"></span>
+							</p>
+							<p>
+								<strong>Types: </strong><span th:text="${shirt.category}"></span>
+							</p>
+
+
+							<p>
+								<strong>Universal Product Code: </strong><span
+									th:text="${shirt.numberOfPages}"></span>
+							</p>
+
+
+							<p>
+								<strong>Shirt Serial Number: </strong><span
+									th:text="${shirt.isbn}"></span>
+							</p>
+							<p>
+								<strong>Delivery Weight : </strong><span
+									th:text="${shirt.shippingWeight}"></span> ounces
+							</p>
+						</div>
+
+						<div class="col-xs-7">
+							<div class="panel panel-default"
+								style="border-width: 5px; margin-top: 20px;">
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-xs-6">
+											<h4>
+												Current price: <span style="color: #db3208;">$<span
+													th:text="${shirt.ourPrice}"></span></span>
+											</h4>
+											<p>
+												Standard Price: <span style="text-decoration: line-through">$<span
+													th:text="${shirt.listPrice}"></span></span>
+											</p>
+
+											<p>
+												Reduced by: $<span
+													th:text="${#numbers.formatDecimal((shirt.listPrice - shirt.ourPrice), 0, 'COMMA', 2, 'POINT' )}"></span>
+											</p>
+
+
+											<span>Qty: </span> <select name="qty">
+												<option th:each="qty : ${qtyList}" th:value="${qty}"
+													th:text="${qty}"></option>
+											</select>
+										</div>
+										<div class="col-xs-6">
+											<h4 th:if="*{shirt.inStockNumber&gt;10}" style="color: green">In
+												Stock</h4>
+
+
+											<h4
+												th:if="*{shirt.inStockNumber&lt;10 and shirt.inStockNumber&gt;0}"
+												style="color: green">
+												Only <span th:text="${shirt.inStockNumber}"> </span> In
+												Stock
+											</h4>
+
+
+
+											<h4 th:if="*{shirt.inStockNumber==0}" style="color: darkred;">Unavailable</h4>
+											<button type="submit" class="btn btn-warning"
+												style="color: black; border: 1px solid black; padding: 10px 40px 10px 40px;">Add
+												to Cart</button>
+
+
+
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<hr />
+					<p th:utext="${shirt.description}"></p>
+				</div>
+			</div>
+		</form>
+	</div>
+	<!-- end of container -->
+
+
+	<div th:replace="common/header :: footer" />
+
+
+	<div th:replace="common/header :: body-bottom-scripts" />
+
+
+</body>
+</html>

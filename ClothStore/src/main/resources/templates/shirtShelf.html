@@ -1,0 +1,182 @@
+<!-- 
+	- citation 
+	- navbar: https://getbootstrap.com/docs/3.4/examples/navbar/
+	- udemy course section2, part6: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363142#questions
+	- udemy course section2, part7: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363144#overview
+	- udemy course section2, part8: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363146#overview
+	- udemy course section2, part9: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363148#overview
+	- udemy course section2, part10: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363150#overview
+	- udemy course section2, part11: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363152#overview
+	- udemy course section3, part12: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363154#overview
+	- udemy course section3, part13: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363156#overview
+	- udemy course section3 part17: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363164#questions
+	- udemy course section3: part19: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363164#questions
+	- udemy course section3: part20:  https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363164#questions
+	- bootstrap carousel: https://getbootstrap.com/docs/3.4/javascript/#carousel
+	- bootsrtap folder : https://getbootstrap.com/docs/3.3/getting-started/#download
+	- bootstrap non respond: https://getbootstrap.com/docs/3.4/examples/non-responsive/
+	- bootstrap panel: https://getbootstrap.com/docs/3.3/components/
+	- random image: https://picsum.photos/
+	- logo image: https://stock.adobe.com/search?k=clothing+logo&asset_id=397367515
+	- top 10 hunter image: https://elements.envato.com/hunter-vintage-badges-KNMANN?_ga=2.45521766.315818343.1726781799-970881309.1726781799
+	- faq image: https://www.searchenginejournal.com/best-faq-page-examples/267709/
+	- google map image: https://support.google.com/maps/thread/264853084/how-to-get-google-maps-to-mark-road-private?hl=en
+	- shirt image: https://kotn.com/products/mens-easy-crew?variant=41447949238355&country=US&gad_source=1&gclid=CjwKCAjwl6-3BhBWEiwApN6_ktEdRUImMTuMfGxO9dezrU3CiUBt8U_nWXGavDZDfECnTbN_zAvoPhoCN-gQAvD_BwE&colour=black&size=m
+	- bookshelf image: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363150#overview
+	- cited http://www.w3.org/1000/xhtml
+	- wood image: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363154#overview
+
+	https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363200#overview
+ -->
+<!doctype html>
+
+
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+
+
+<head th:replace="common/header :: common-header" />
+
+<div th:replace="common/header :: navbar" />
+
+
+
+<body style="background-color: #f0f0f0;">
+	<div class="container">
+		<div class="row" style="margin-bottom: -100px;">
+			<div class="col-xs-8">
+				<h2 class="section-headline">
+					<span>Product Catalog</span>
+				</h2>
+			</div>
+		</div>
+
+
+		<hr
+			style="position: absolute; width: 100%; height: 6px; background-color: #333; z-index: -1; margin-top: -80px;" />
+		<img class="img-responsive" src="/image/wood.png"
+			style="margin-top: -75px;" />
+
+
+
+		<div class="row" style="margin-top: 60px;">
+			<div class="col-xs-3">
+				<h3>
+					<label for="category">Category</label>
+				</h3>
+				<div class="list-group" id="category">
+					<a th:href="@{/shirtshelf(category='all')}"
+						th:classappend="${activeAll}? 'active'" class="list-group-item">All</a>
+					<a th:href="@{/searchByCategory(category='T-Shirts')}"
+						th:classappend="${activeManagement}? 'active'"
+						class="list-group-item">T-Shirts</a> <a
+						th:href="@{/searchByCategory(category='V-Neck-Shirt')}"
+						th:classappend="${activeFiction}? 'active'"
+						class="list-group-item">V-Neck-Shirt</a> <a
+						th:href="@{/searchByCategory(category='Crew-Neck-Shirt')}"
+						th:classappend="${activeEngineering}? 'active'"
+						class="list-group-item">Crew-Neck-Shirt</a> <a
+						th:href="@{/searchByCategory(category='Graphic-Tee')}"
+						th:classappend="${activeProgramming}? 'active'"
+						class="list-group-item">Graphic-Tee</a> <a
+						th:href="@{/searchByCategory(category='Pocket-Tee &amp; Ringer-Tee')}"
+						th:classappend="${activeArtsLiterature}? 'active'"
+						class="list-group-item">Pocket-Tee &amp; Ringer-Tee</a>
+				</div>
+			</div>
+
+
+			<div class="col-xs-9">
+				<div th:if="${emptyList}">
+					<h5 style="font-style: italic;">Unfortunately, there is no
+						result. Try something else or give it another go later.</h5>
+				</div>
+
+				<table border="0" id="shirtList">
+					<thead>
+						<tr>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="shirt-item" data-th-each="shirt : ${shirtList}">
+							<td>
+								<div th:if="${shirt != null}">
+									<div class="row">
+										<div class="col-xs-3">
+											<a th:href="@{/shirtDetail?id=}+${shirt.id}"><img
+													class="img-responsive shelf-shirt"
+													th:src="#{adminPath}+@{/image/shirt/}+${shirt.id}+'.png'"
+													style="margin-top: 20px;" /></a>
+
+
+										</div>
+
+										<div class="col-xs-9">
+											<a th:href="@{/shirtDetail?id=}+${shirt.id}"><h4
+													th:text="${shirt.title}"></h4></a> <span
+												th:text="${shirt.publicationDate}"></span>
+											<p th:text="${shirt.author}"></p>
+
+
+											<a th:href="@{/shirtDetail?id=}+${shirt.id}"> <span
+												th:text="'Universal Product Code:'"></span>
+
+											</a> <span th:text="${shirt.numberOfPages}"><span>
+													pages</span></span><br /> <a th:href="@{/shirtDetail?id=}+${shirt.id}"><span
+												style="font-size: x-large; color: #db3208;">$<span
+													th:text="${#numbers.formatDecimal(shirt.ourPrice, 0 , 'COMMA', 2, 'POINT')}"></span></span></a>
+
+											<span style="text-decoration: line-through;">$<span
+												th:text="${#numbers.formatDecimal(shirt.listPrice, 0 , 'COMMA', 2, 'POINT')}"></span></span>
+
+											<p th:utext="${#strings.abbreviate(shirt.description, 600)}"></p>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+
+			</div>
+		</div>
+	</div>
+	<!-- end of container -->
+
+
+	<div th:replace="common/header :: footer" />
+
+
+	<div class="container"></div>
+
+	<div th:replace="common/header :: body-bottom-scripts" />
+
+	<script th:inline="none">
+		$(document).ready(
+				function() {
+					$('#shirtList').DataTable(
+							{
+								"lengthMenu" : [ [ 5, 10, 15, 20, -1 ],
+										[ 5, 10, 15, 20, "All" ] ],
+								"ordering" : false,
+								stateSave : true
+							});
+
+					$("#shirtList").on('page.dt', function() {
+						$('html, body').animate({
+							scrollTop : $('#shirtList').offset().top
+						}, 200);
+					});
+				});
+	</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

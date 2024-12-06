@@ -1,0 +1,327 @@
+<!-- 
+	- citation 
+	- navbar: https://getbootstrap.com/docs/3.4/examples/navbar/
+	- udemy course section2, part6: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363142#questions
+	- udemy course section2, part7: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363144#overview
+	- udemy course section2, part8: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363146#overview
+	- udemy course section2, part9: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363148#overview
+	- udemy course section2, part10: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363150#overview
+	- udemy course section2, part11: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363152#overview
+	- bootstrap carousel: https://getbootstrap.com/docs/3.4/javascript/#carousel
+	- bootsrtap folder : https://getbootstrap.com/docs/3.3/getting-started/#download
+	- bootstrap non respond: https://getbootstrap.com/docs/3.4/examples/non-responsive/
+	- bootstrap panel: https://getbootstrap.com/docs/3.3/components/
+	- random image: https://picsum.photos/
+	- logo image: https://stock.adobe.com/search?k=clothing+logo&asset_id=397367515
+	- top 10 hunter image: https://elements.envato.com/hunter-vintage-badges-KNMANN?_ga=2.45521766.315818343.1726781799-970881309.1726781799
+	- faq image: https://www.searchenginejournal.com/best-faq-page-examples/267709/
+	- google map image: https://support.google.com/maps/thread/264853084/how-to-get-google-maps-to-mark-road-private?hl=en
+	- shirt image: https://kotn.com/products/mens-easy-crew?variant=41447949238355&country=US&gad_source=1&gclid=CjwKCAjwl6-3BhBWEiwApN6_ktEdRUImMTuMfGxO9dezrU3CiUBt8U_nWXGavDZDfECnTbN_zAvoPhoCN-gQAvD_BwE&colour=black&size=m
+	- bookshelf image: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363150#overview
+	- cited http://www.w3.org/1000/xhtml
+ -->
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+
+<head th:replace="common/header :: common-header" />
+
+<!-- <head th:replace="common/header :: common-header" /> -->
+<body style="background-color: #f0f0f0;">
+
+
+	<div th:replace="common/header :: navbar" />
+
+
+	<!-- container -->
+
+	<div class="container">
+		<div class="row banner">
+			<!-- carousel -->
+			<div class="col-xs-8">
+				<div class="panel panel-default" style="margin-top: 20px;">
+					<div class="panel-body">
+						<div id="carousel-example-generic" class="carousel slide"
+							data-ride="carousel">
+							<ol class="carousel-indicators">
+								<li data-target="#carousel-example-generic" data-slide-to="0"
+									class="active"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+							</ol>
+
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner" role="listbox">
+								<div class="item active">
+									<img src="https://picsum.photos/1600/500?random1" alt="" />
+									<div class="carousel-caption">
+										<h4>Welcome to Huang's Shopping Mall</h4>
+										<p>Customers will get the best shopping experience here.</p>
+									</div>
+								</div>
+								<div class="item">
+									<img src="https://picsum.photos/1600/500?random2" alt="" />
+									<div class="carousel-caption">
+										<h4>Store Directory</h4>
+										<p>Search with the brands you love or discovered a new
+											one.</p>
+									</div>
+								</div>
+								<div class="item">
+									<img src="https://picsum.photos/1600/500?random3" alt="" />
+									<div class="carousel-caption">
+										<h4>Dining & Restaurants</h4>
+										<p>Find your favorite dining from the mall. Enjoy a
+											variety of flavors of dining options from there.</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Controls -->
+							<a class="left carousel-control" href="#carousel-example-generic"
+								role="button" data-slide="prev"> <span
+								class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a> <a class="right carousel-control"
+								href="#carousel-example-generic" role="button" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right"
+								aria-hidden="true"></span> <span class="sr-only">Next</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-xs-3" style="margin-top: 20px;">
+				<a th:href="@{/}"> <img src="/image/logo2.png"
+					class="img-responsive" style="margin-left: 60px;" />
+				</a>
+			</div>
+
+
+		</div>
+
+
+		<hr />
+
+		<div class="row">
+			<div class="col-xs-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<a th:href="@{/shirtshelf}"><img src="/image/four.png"
+							class="img-responsive" /></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<a th:href="@{/hours}"><img src="/image/mapOne.png"
+							class="img-responsive" /></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<a th:href="@{/faq}"><img src="/image/faq.png"
+							class="img-responsive" /></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div>
+			<div class="home-headline">
+				<span>Feature Cloth</span>
+			</div>
+			<hr style="margin-top: -15px" />
+		</div>
+
+		<div class="row">
+			<div id="feature-cloths" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#feature-cloths" data-slide-to="0" class="active"></li>
+					<li data-target="#feature-cloths" data-slide-to="1"></li>
+					<li data-target="#feature-cloths" data-slide-to="2"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<img src="/image/shelf.png" class="img-responsive" />
+						<div class="carousel-caption">
+							<div class="row">
+
+								<div class="col-xs-2">
+									<a href="/shirtOne"> <img class="img-responsive"
+										src="/image/1.png" />
+									</a>
+								</div>
+
+
+								<div class="col-xs-2">
+									<a href="/shirtTwo"> <img class="img-responsive"
+										src="/image/2.png" />
+									</a>
+								</div>
+
+								<div class="col-xs-2">
+									<a href="/shirtThree"> <img class="img-responsive"
+										src="/image/3.png" />
+									</a>
+								</div>
+
+
+								<div class="col-xs-2">
+									<a href="/shirtFour"> <img class="img-responsive"
+										src="/image/4.png" />
+									</a>
+								</div>
+
+
+								<div class="col-xs-2">
+									<a href="/shirtFive"> <img class="img-responsive"
+										src="/image/5.png" />
+									</a>
+								</div>
+
+
+								<div class="col-xs-2">
+									<a href="/shirtSix"> <img class="img-responsive"
+										src="/image/6.png" />
+									</a>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<img src="/image/shelf.png" class="img-responsive" />
+						<div class="carousel-caption">
+							<div class="row">
+
+
+								<div class="col-xs-2">
+									<a href="/shirtSeven"> <img class="img-responsive"
+										src="/image/7.png" />
+									</a>
+								</div>
+
+								<div class="col-xs-2">
+									<a href="/shirtEight"> <img class="img-responsive"
+										src="/image/8.png" />
+									</a>
+								</div>
+
+
+								<div class="col-xs-2">
+									<a href="/shirtNine"> <img class="img-responsive"
+										src="/image/9.png" />
+									</a>
+								</div>
+
+
+								<div class="col-xs-2">
+									<a href="/shirtTen"> <img class="img-responsive"
+										src="/image/10.png" />
+									</a>
+								</div>
+
+								<div class="col-xs-2">
+									<a href="/shirtEleven"> <img class="img-responsive"
+										src="/image/11.png" />
+									</a>
+								</div>
+
+
+								<div class="col-xs-2">
+									<a href="/shirtTwelve"> <img class="img-responsive"
+										src="/image/12.png" />
+									</a>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<img src="/image/shelf.png" class="img-responsive" />
+						<div class="carousel-caption">
+							<div class="row">
+
+								<div class="col-xs-2">
+									<a href="/shirtThirteen"> <img class="img-responsive"
+										src="/image/13.png" />
+									</a>
+								</div>
+
+
+								<div class="col-xs-2">
+									<a href="/shirtFourteen"> <img class="img-responsive"
+										src="/image/14.png" />
+									</a>
+								</div>
+								
+								
+							
+								<div class="col-xs-2">
+									<a href="/shirtFifteen"> <img class="img-responsive"
+										src="/image/15.png" />
+									</a>
+								</div>
+
+
+								<div class="col-xs-2">
+									<a href="/shirtSixteen"> <img class="img-responsive"
+										src="/image/16.png" />
+									</a>
+								</div>
+
+								<div class="col-xs-2">
+									<a href="/shirtSeventeen"> <img class="img-responsive"
+										src="/image/17.png" />
+									</a>
+								</div>
+
+								<div class="col-xs-2">
+									<a href="/shirtEighteen"> <img class="img-responsive"
+										src="/image/18.png" />
+									</a>
+								</div>
+
+
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Controls -->
+				<a class="left carousel-control" href="##feature-cloths"
+					role="button" data-slide="prev"> <span
+					class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a> <a class="right carousel-control" href="##feature-cloths"
+					role="button" data-slide="next"> <span
+					class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+
+
+	</div>
+	<!-- end of container -->
+
+	<div th:replace="common/header :: footer" />
+
+	<div th:replace="common/header :: body-bottom-scripts" />
+
+</body>
+
+</html>

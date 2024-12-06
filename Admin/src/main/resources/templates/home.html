@@ -1,0 +1,109 @@
+<!-- 
+	- citation 
+	- navbar: https://getbootstrap.com/docs/3.4/examples/navbar/
+	- udemy course section2, part6: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363142#questions
+	- udemy course section2, part7: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363144#overview
+	- udemy course section2, part8: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363146#overview
+	- udemy course section2, part9: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363148#overview
+	- udemy course section2, part10: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363150#overview
+	- udemy course section2, part11: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363152#overview
+	- bootstrap carousel: https://getbootstrap.com/docs/3.4/javascript/#carousel
+	- bootsrtap folder : https://getbootstrap.com/docs/3.3/getting-started/#download
+	- bootstrap non respond: https://getbootstrap.com/docs/3.4/examples/non-responsive/
+	- bootstrap panel: https://getbootstrap.com/docs/3.3/components/
+	- random image: https://picsum.photos/
+	- logo image: https://stock.adobe.com/search?k=clothing+logo&asset_id=397367515
+	- top 10 hunter image: https://elements.envato.com/hunter-vintage-badges-KNMANN?_ga=2.45521766.315818343.1726781799-970881309.1726781799
+	- faq image: https://www.searchenginejournal.com/best-faq-page-examples/267709/
+	- google map image: https://support.google.com/maps/thread/264853084/how-to-get-google-maps-to-mark-road-private?hl=en
+	- shirt image: https://kotn.com/products/mens-easy-crew?variant=41447949238355&country=US&gad_source=1&gclid=CjwKCAjwl6-3BhBWEiwApN6_ktEdRUImMTuMfGxO9dezrU3CiUBt8U_nWXGavDZDfECnTbN_zAvoPhoCN-gQAvD_BwE&colour=black&size=m
+	- bookshelf image: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363150#overview
+	- cited http://www.w3.org/1000/xhtml
+ -->
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body style="background-color: #f2f2f2;">
+
+	<div th:replace="common/header :: navbar" />
+
+	<div class="container" style="margin-top: 45px;">
+		<h5 class="center-block"
+			style="font-weight: bold; font-size: 40px; text-align: center;">
+			Welcome to HUANG'S ClothStore's admin portal</h5>
+
+		<hr />
+
+		<div style="display: flex;">
+			<img th:src="@{/image/logo3.png}" class="img-responsive"
+				style="width: 150px;">
+		</div>
+		<div class="table-responsive" >
+			<table id="UserListTable"
+				class="table table-bordered table-hover table-striped">
+				<thead>
+					<tr>
+						<th><input th:id="selectAllUsers" type="checkbox" /></th>
+						<th>ID</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
+						<th>Username</th>
+						<th>Enabled</th>
+						<th>Operation</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user : ${userList}">
+						<td><input type="checkbox" th:id="'selectedUser-'+${user.id}"
+							class="checkboxUser" th:value="${user.id}" /></td>
+						<td th:text="${user.id}"></td>
+						<td th:text="${user.firstName}"></td>
+						<td th:text="${user.lastName}"></td>
+						<td th:text="${user.email}"></td>
+						<td th:text="${user.username}"></td>
+						<td th:text="${user.enabled} ? 'true' : 'false'"></td>
+						<td>
+							<button th:id="'toggleUser-'+${user.id}"
+								class="btn btn-xs toggle-user"
+								th:classappend="${user.enabled} ? 'btn-success' : 'btn-danger'"
+								th:attr="data-user-id=${user.id}" type="button">
+								<span
+									th:class="'fa ' + (${user.enabled} ? 'fa-unlock' : 'fa-lock')"></span>
+								<span th:text="${user.enabled} ? ' Unlock' : ' Lock'"></span>
+							</button>
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+
+		<button id="toggleSelected" class="btn btn-primary"
+			>Lock or Unlock Specific Users</button>
+	</div>
+
+
+
+
+	<div th:replace="common/header :: footer" />
+
+	<div th:replace="common/header :: body-bottom-scripts" />
+
+
+	<script th:inline="none">
+		$(document).ready(
+				function() {
+					$("#UserListTable").DataTable(
+							{
+								"lengthMenu" : [ [ 5, 10, 15, 20, -1 ],
+										[ 5, 10, 15, 20, "All" ] ],
+								"ordering" : false,
+								stateSave : true
+							});
+				});
+	</script>
+
+</body>
+</html>

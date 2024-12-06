@@ -1,0 +1,171 @@
+<!-- 
+	- citation 
+	- navbar: https://getbootstrap.com/docs/3.4/examples/navbar/
+	- udemy course section2, part6: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363142#questions
+	- udemy course section2, part7: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363144#overview
+	- udemy course section2, part8: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363146#overview
+	- udemy course section2, part9: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363148#overview
+	- udemy course section2, part10: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363150#overview
+	- udemy course section2, part11: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363152#overview
+	- udemy course section3, part12: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363154#overview
+	- udemy course section3, part13: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363156#overview
+	- udemy course section3 part17: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363164#questions
+	- udemy course section3 part22: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363176#questions
+	- bootstrap carousel: https://getbootstrap.com/docs/3.4/javascript/#carousel
+	- bootsrtap folder : https://getbootstrap.com/docs/3.3/getting-started/#download
+	- bootstrap non respond: https://getbootstrap.com/docs/3.4/examples/non-responsive/
+	- bootstrap panel: https://getbootstrap.com/docs/3.3/components/
+	- random image: https://picsum.photos/
+	- logo image: https://stock.adobe.com/search?k=clothing+logo&asset_id=397367515
+	- top 10 hunter image: https://elements.envato.com/hunter-vintage-badges-KNMANN?_ga=2.45521766.315818343.1726781799-970881309.1726781799
+	- faq image: https://www.searchenginejournal.com/best-faq-page-examples/267709/
+	- google map image: https://support.google.com/maps/thread/264853084/how-to-get-google-maps-to-mark-road-private?hl=en
+	- shirt image: https://kotn.com/products/mens-easy-crew?variant=41447949238355&country=US&gad_source=1&gclid=CjwKCAjwl6-3BhBWEiwApN6_ktEdRUImMTuMfGxO9dezrU3CiUBt8U_nWXGavDZDfECnTbN_zAvoPhoCN-gQAvD_BwE&colour=black&size=m
+	- bookshelf image: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363150#overview
+	- cited http://www.w3.org/1000/xhtml
+	- wood image: https://www.udemy.com/course/complete-e-commerce-course-javaspringhibernate-and-mysql/learn/lecture/6363154#overview
+ -->
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body >
+
+	<div th:replace="common/header :: navbar" />
+
+
+	<div class="container">
+		<div class="row" style="margin-bottom: -20px;">
+			<div class="col-xs-8">
+				<h2 class="section-headline">
+					<span>User Account</span>
+				</h2>
+			</div>
+
+		
+
+		</div>
+		<hr/>
+		<img src="/image/wood.png" class="img-responsive"
+			style="margin-top: -65px" />
+
+		<!-- end of container -->
+
+		<div class="row">
+			<div class="col-xs-9 col-xs-offset-3" style="margin-top: 20px;">
+				<!-- nav  tap -->
+				<ul class="nav nav-tabs">
+					<li th:classappend="${classActiveNewAccount}? 'active'"><a
+						href="#tab-1" data-toggle="tab"><span style="color: red;">Create
+								new account</span></a></li>
+					<li th:classappend="${classActiveLogin}? 'active'"><a
+						href="#tab-2" data-toggle="tab"><span style="color: red;">Login</span></a></li>
+					<li th:classappend="${classActiveForgetPassword}? 'active'"><a
+						href="#tab-3" data-toggle="tab"><span style="color: red;">Forget
+								password</span></a></li>
+				</ul>
+
+				<!-- tab panel -->
+				<div class="tab-content">
+					<!-- create new user  -->
+					<div class="tab-pane fade" id="tab-1"
+						th:classappend="${classActiveNewAccount}? 'in active'">
+						<div class="panel-group">
+							<div class="panel panel-default" style="border: none;">
+								<div class="panel-body"
+									style="background-color: #ededed; margin-top: 20px;">
+
+									<div class="alert alert-info" th:if="${emailSent}">An
+										email has been send;</div>
+									<form th:action="@{/newUser}" method="POST">
+
+										<div class="form-group">
+											<label for="newUsername">* Username</label>&nbsp;<span
+												style="color: red" th:if="${nameExists}">Username
+												Exists</span> <input required="required" type="text"
+												class="form-control" id="newUsername" name="username" />
+											<p style="color: #828282">Enter your username here</p>
+										</div>
+										<div class="form-group">
+											<label for="email">* Email Address: </label> <span
+												style="color: red" th:if="${emailExists}">Email
+												Exists</span> <input required="required" type="text"
+												class="form-control" id="email" name="email" />
+											<p style="color: #828282">A valid email address here</p>
+										</div>
+										<button type="submit" class="btn btn-primary">Create
+											new account</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- login -->
+					<div class="tab-pane fade" id="tab-2"
+						th:classappend="${classActiveLogin}? 'in active'">
+						<div class="panel-group">
+							<div class="panel panel-default" style="border: none;">
+								<div class="panel-body"
+									style="background-color: #ededed; margin-top: 20px;">
+									<div th:if="${param.error != null}" style="color: red;">Wrong
+										username or password</div>
+									<form th:action="@{/login}" method="post">
+										<div class="form-group">
+											<label for="newUsername">* Username</label> <input
+												required="required" type="text" class="form-control"
+												id="newUsername" name="username" />
+											<p style="color: #828282">Enter your username here</p>
+										</div>
+										<div class="form-group">
+											<label for="password">* Password: </label> <input
+												required="required" type="password" class="form-control"
+												id="password" name="password" />
+											<p style="color: #828282">Enter the password here</p>
+										</div>
+										<button type="submit" class="btn btn-primary">Login</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- forget password -->
+					<div class="tab-pane fade" id="tab-3"
+						th:classappend="${classActiveForgetPassword}? 'in  active'">
+						<div class="panel-group">
+							<div class="panel panel-default" style="border: none;">
+								<div class="panel-body"
+									style="background-color: #ededed; margin-top: 20px;">
+									<div th:if="${emailNotExist}" class="alert alert-danger">Email
+										does not exist</div>
+									<div th:if="${forgetPasswordEmailSent}"
+										class="alert alert-success">Email Sent</div>
+									<form th:action="@{/forgetPassword}" method="post">
+										<div class="form-group">
+											<label for="recoverEmail">* Your Email: </label> <input
+												required="required" type="text" class="form-control"
+												id="recoverEmail" name="email" />
+											<p style="color: #828282">Enter the register email here</p>
+										</div>
+
+										<button type="submit" class="btn btn-primary">Submit</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+
+		</div>
+	</div>
+
+	<div th:replace="common/header :: footer" />
+
+	<div th:replace="common/header :: body-bottom-scripts" />
+</body>
+</html>
