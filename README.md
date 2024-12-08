@@ -1,7 +1,7 @@
 # :package: ShirtStore Project 
 
  ## Abstract
-The E-Commerce website for the shirt store uses HTML, CSS, Javascript, Java, Spring Framework, Thymeleaf, Hibernate, and MYSQL. The key functionality focuses on user signup and login, user profile management, product management, shopping cart, order checkout and order history, and automatic email confirmation.
+The E-Commerce website for the shirt store uses HTML, CSS, Javascript, Kotlin, Spring Framework, Thymeleaf, Hibernate, and MYSQL. The key functionality focuses on user signup and login, user profile management, product management, shopping cart, order checkout and order history, and automatic email confirmation.
 
 ---
 
@@ -86,19 +86,23 @@ Discover the basic characteristics of ShirtStore, which are organized in the fol
 - **Frontend**:
   - **CSS**: Styles are designed to be attractive in appearance.
   - **HTML**: Creates the layout of the website's page.
+  - **Kotlin**: Utilize backend functionality and pass back to HTML
   - **JavaScript**: Pass the user interaction from frontend to backend.
   - **Thymeleaf**: Renders changes in data across websites, using Spring Boot.
 - **Backend**:
+  - **Kotlin**: Design functionality or utilize the functionality exit on the interface. 
   - **Spring Boot**: Manages business logic and consumer relationships.
   - **MySQL**: Handles and saves data.
   - **Spring Security**: Ensures safe verification and entry restriction.
 
 ### AdminPortal (Administrative Layout) 
 - **Frontend**:
+  - **Kotlin** Utilize backend functionality and pass back to HTML 
   - **CSS**: Styles manage the interface in a neat and expert manner.
   - **HTML**: Creates the layout of the administrative portal.
   - **Thymeleaf**: Renders interactive material to improve the operation of administration.
 - **Backend**:
+  - **Kotlin**: Design functionality or utilize the functionality exit on the interface. 
   - **JavaScript**: Transfer input from users from frontend to backend.
   - **MySQL**: Handles data about users. 
   - **Spring Boot**: Manages operational logic and data processes.
@@ -117,7 +121,7 @@ Discover the basic characteristics of ShirtStore, which are organized in the fol
 
 ```bash
 # Download the project
-git clone https://github.com/jianghuang588/ecommerce_website_java.git
+git clone [https://github.com/jianghuang588/ecommerce_website_java.git](https://github.com/jianghuang588/ecommerce_website_kotlin.git)
 
 # Configure the MySQL database
 # Ensure that MySQL is operating locally.
@@ -127,12 +131,12 @@ git clone https://github.com/jianghuang588/ecommerce_website_java.git
 
 # Open the development environment (Eclipse, IntelliJ IDEA)
 # Import the existing maven project into your IDE 
-# Navigate to the root directory of ecommerce_website_java
+# Navigate to the root directory of ecommerce_website_kotlin
 # Press finish
 
 # Construct and manage the project
 # Verify the resolution of Maven dependencies.
-# Launch the main class as a Java application after locating it.
+# Launch the main class as a Kotlin application after locating it.
 
 # Start the application
 # Standard user:
